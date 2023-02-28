@@ -3,28 +3,48 @@
     <head>
         <meta charset="utf-8">
         <title>Rock Paper Scissors Game</title>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <h3>Please Make a Selection</h3>
+        <section class="intro">
+            <h1>Rock • Paper • Scissors</h1>
+            <h3>Do you have what it takes to win? </h2>
+            <p class="title-description">To play the game, please select an option using the 3 buttons below. Once you have selected one, click submit to see your outcome against the computer. <br> You can play up to five times until the game resets.</p>
+        </section>
+        <section>
+                <h4>Please Make a Selection</h4>
+        </section>
         <section id="playerOptions">
                 <button class="button">rock</button>
                 <button class="button">paper</button>
                 <button class="button">scissors</button>
         </section>
         <section>
-            <p>Your selection is: <span id="choicePrint"></span></p>
-            <button id="submit" class="button">Submit</button>
+            <p class="yourSelection">Your selection is: <span id="choicePrint"></span></p>
+            <button id="submit" >Submit</button>
             <p id="outcome"></p>
         </section>
         <section>
-            <h3>Score Board</h3>
-            <p>Your Score: <span id="playerScoreText"></span></p>
-            <p>Computer Score: <span id="computerScoreText"></span></p>
-            <p>Tie: <span id="scoreTieText"></span></p>
+            <h4>Score Board</h4>
+            <div class="scoreBoard">
+                <div class="scoreDiv">
+                    <p>Your Score:</p>
+                    <p class="scoreText" id="playerScoreText"></p>
+                </div>
+                <div class="scoreDiv">
+                    <p>Computer Score:</p>
+                    <p class="scoreText" id="computerScoreText"></p>
+                </div>
+                <div class="scoreDiv">
+                    <p>Tie Score:</p>
+                    <p class="scoreText" id="scoreTieText"></p>
+                </div>
+            </div>
             <p id="winnerDeclaration"></p>
-            <button id="restartGame">Restart Game</button>
+        </section> 
+        <section>
+            <button id="restartGame" class="restart">Restart Game</button>
         </section>
-        
     </body>
     <script>
 
@@ -77,15 +97,12 @@
         //Record the score based on selection
         function scoreBoard(){
             if (result == "You win"){
-                console.log(`Your Score = ${playerScore}`)
                 playerScoreText.textContent = playerScore;
             }
             else if (result == "Computer wins") {
-                console.log(`Computer's Score = ${computerScore}`);
                 computerScoreText.textContent = computerScore;
             }
             else{
-                console.log(`Tie = ${scoreTie}`);
                 scoreTieText.textContent = scoreTie;  
             }
         }
@@ -101,20 +118,26 @@
                 choicePrint.textContent = ""
                 for (let i = 0; i < button.length; i++) {
                     button[i].disabled = true;
+                    button[i].style.borderColor = "#555555";
+                    button[i].style.color = "#555555";
+                    button[i].style.cursor = "default";
                 }
-                console.log("Game of 5 over");
+                
+
                 if (computerScore > playerScore){
                     winnerDeclaration.textContent = "Computer wins!";
                     restartGame.style.display = "block";
                 }
                 else if (playerScore > computerScore){
                     winnerDeclaration.textContent = "You win!";
-                    restartGame.style.display = "block";
+                    restartGame.style.display = "initial";
                 }
                 else {
                     winnerDeclaration.textContent = "it's a tie!";
                     restartGame.style.display = "block";
                 } 
+                submit.style.backgroundColor = "#555555";
+                submit.style.cursor = "default"; 
             }
         });
         
@@ -130,7 +153,12 @@
             document.getElementById("submit").disabled = false;
             for (let i = 0; i < button.length; i++) {
                     button[i].disabled = false;
+                    button[i].style.borderColor = "";
+                    button[i].style.color = "";
+                    button[i].style.cursor = "pointer";
                 }
+                submit.style.backgroundColor = "";
+                submit.style.cursor = "pointer"; 
         }
         restartGame.addEventListener('click', resetGame);
 

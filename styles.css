@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, 'Open Sans';
+    color: #222222;
+}
+.intro{
+    text-align: center;
+    padding: 20px;
+}
+
+h1{
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+h3{
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+h4{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.title-description{
+    max-width: 600px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 8px auto 40px auto;
+}
+
+section{
+    text-align: center;
+    padding: 8px
+}
+
+#playerOptions{
+    margin: -10px 0px 10px;
+}
+
+.yourSelection{
+    font-size: 16px;
+    font-weight: 500;
+    margin: 30px 0px 0px;
+}
+
+.button{
+    all: unset;
+    cursor: pointer;
+    background-color: none;
+    color: #3882F6;
+    font-size: 24px;
+    padding: 12px;
+    width: 120px;
+    height: 100px;
+    box-shadow: none;
+    border-radius: 10px;
+    border: 2px solid #3882F6;
+    text-align: center;
+    margin: 0px 10px;
+}
+.button:focus{
+    background-color: #3882F6;
+    color: white;
+}
+
+.button:hover{
+    background-color: #3882F6;
+    color: white;
+}
+
+#submit{
+    all: unset;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 24px;
+    padding: 12px;
+    width: 200px;
+    box-shadow: none;
+    border-radius: 10px;
+    border: 0px solid #3882F6;
+    background-color: #3882F6;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+#submit:hover{
+    background-color: #0B64F0;
+}
+
+.scoreBoard{
+    display: flex;
+    justify-content: center;
+}
+
+.scoreDiv{
+    display: block;
+    margin: 10px;
+}
+
+.scoreText{
+    margin: 10px 0px;
+}
+
+#winnerDeclaration{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.restart{
+    all: unset;
+    cursor: pointer;
+    background-color: #3882F6;
+    color: white;
+    font-size: 24px;
+    padding: 12px;
+    width: 200px;
+    box-shadow: none;
+    border-radius: 10px;
+    border-color: none;
+    text-align: center;
+    margin: 20px auto 30px;
+}
